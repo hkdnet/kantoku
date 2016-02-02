@@ -1,5 +1,7 @@
 require "./kantoku/*"
+require "kemal"
 
-module Kantoku
-  # TODO Put your code here
+get "/" do |env|
+  name = env.params.key?("name") ? env.params["name"] as String : "John Doe"
+  render "views/index.ecr"
 end
